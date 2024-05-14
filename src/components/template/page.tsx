@@ -13,12 +13,9 @@ import Button from "react-bootstrap/Button";
 import Link from "next/link";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { usePathname } from "next/navigation";
-// import { useCommonStore } from "@/stores/common";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  // const { search } = useCommonStore();
-  // console.log("pathname", pathname);
 
   return (
     <Container className={css.container}>
@@ -215,9 +212,20 @@ export default function Template({ children }: { children: React.ReactNode }) {
             </Row>
           </Col>
         </>
+        {/* cột quản trị viên đăng nhập */}
+        <Row>
+          <div style={{ textAlign: "center" }}>
+            <hr />
+            <b>CHỨC NĂNG DÀNH CHO QUẢN TRỊ VIÊN: &nbsp;</b>
+            <Link href="/Login" className={css.btnLogin}>
+              <b>Login</b>
+            </Link>{" "}
+            <hr />
+          </div>
+        </Row>
         {/* cột thông tin coding by */}
         <Row>
-          <div style={{ textAlign: "center", paddingTop: "20px" }}>
+          <div style={{ textAlign: "center" }}>
             <Link href="/#" style={{ textDecoration: "none" }}>
               ©Coppy right:
               <b>
